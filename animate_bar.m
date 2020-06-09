@@ -2,8 +2,8 @@ clear ket
 clear xTickLabel
 close all
 ket = zeros(N,1);
-ket(1:N/2) = 1;
-ket(N/2+1) = 0;
+ket(1) = 1;
+ket(N/2+1) = -1;
 ket = (1/norm(ket)).*ket;
 h = figure;
 axis tight manual %ensures getframe() returns consistent size

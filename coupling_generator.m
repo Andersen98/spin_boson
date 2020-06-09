@@ -6,6 +6,8 @@ if strcmp('none',arg)
 elseif strcmp('full',arg)
     coupling = ones(1,params.n_osc).*.1;
     coupling(1) = 1;
+elseif strcmp('debye',arg)
+    
 else
     warning('error in coupling input')
     coupling = zeros(1,params.n_osc);

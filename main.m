@@ -5,9 +5,9 @@ clear variables;
 %define the parameters of system
 params.n_osc = 3;
 params.n_max = 2;
-params.delta = .1;
+params.delta = .0001;
 params.omega = 6;
-params.coupling = ones(1,params.n_osc)*05;
+params.coupling = ones(1,params.n_osc)*01;
 
 
 %setup empty Hamiltonian and # of possible states
