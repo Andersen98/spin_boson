@@ -24,5 +24,5 @@ tmpvec(n_bath+1:n_total,1) = y(1:n_bath);
 dydt = dydt + tmpvec;
         
 end
-end
+
 
