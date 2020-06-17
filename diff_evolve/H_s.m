@@ -22,6 +22,7 @@ tmpvec(1:n_bath,1) = y(n_bath+1:n_total,1);
 tmpvec(n_bath+1:n_total,1) = y(1:n_bath);
 
 dydt = dydt + tmpvec;
+dydt = -1i .* dydt;
         
 end
 

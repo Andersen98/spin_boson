@@ -10,7 +10,7 @@ params.T = 2;
     %n_max is the maximal mode for each oscillator i,e, can range from
     %0,1,2,3...n
 params.n_max = 1;
-params.osc_count = 12;
+params.osc_count = 7;
 
 %Descretized Debey spectral density - need us to choose a
     %charactaristic frequency for the bath wc
@@ -43,16 +43,17 @@ n_bath = mode_count^osc_count;
 n_total = 2*n_bath;
 
 %now evolve state
-n_steps =40;
-t = linspace(0,12,n_steps);
+n_steps =30000;
+t = linspace(0,10000,n_steps);
 p_diff = zeros(1,n_steps);
 tic()
 parfor ii = 1:n_steps
     psi_ii = expm(-1i.*t(ii).*H)*initial_state;
     %psi_up_ii = psi_ii(1:n_bath);
    % psi_down_ii = psi_ii((n_bath+1):n_total);
-    p_diff(ii) =  norm(psi_ii(1:n_bath))^2 - norm(psi_ii((n_bath+1):n_total))^2 ;
-    psi_ii = []
+    %p_diff(ii) =  norm(psi_ii(1:n_bath))^2 - norm(psi_ii((n_bath+1):n_total))^2 ;
+    p_diff(ii) = trace(TrX(psi_ii,2,[2,n_bath])*[1,0;0,-1]);
+    psi_ii = [];
 end
 toc()
 plot(t,p_diff)
