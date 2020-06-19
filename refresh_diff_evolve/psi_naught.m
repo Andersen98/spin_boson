@@ -19,7 +19,7 @@ for ii = 1:(bath_count-1)
           
       end 
     end
-    counter_vec
+    
     %prepare for direct product of osc1*(osc2*(...*oscn))
     tmp_state = zeros(mode_counts(end),1);
     tmp_state(counter_vec(end)+1) = 1;
