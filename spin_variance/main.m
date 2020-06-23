@@ -9,8 +9,8 @@ params.T = 2;
     %osc_count is the number of oscillators to be used in the bath
     %n_max is the maximal mode for each oscillator i,e, can range from
     %0,1,2,3...n
-params.n_max = 1;
-params.osc_count = 7;
+params.n_max = 2;
+params.osc_count = 2;
 
 %Descretized Debey spectral density - need us to choose a
     %charactaristic frequency for the bath wc
@@ -43,8 +43,8 @@ n_bath = mode_count^osc_count;
 n_total = 2*n_bath;
 
 %now evolve state
-n_steps =30000;
-t = linspace(0,10000,n_steps);
+n_steps =150;
+t = linspace(0,12,n_steps);
 p_diff = zeros(1,n_steps);
 tic()
 parfor ii = 1:n_steps
