@@ -3,14 +3,14 @@ clear variables;
 %physics params - (k_b=h_bar=1, energy in units of delta)
 params.epsilon = 0;
 params.lambda = 2.5;
-params.T = 2; 
+params.T = .2; 
 
 %simulation parameters
     %osc_count is the number of oscillators to be used in the bath
     %n_max is the maximal mode for each oscillator i,e, can range from
     %0,1,2,3...n
-params.n_max = 2;
-params.osc_count = 2;
+params.n_max = 1;
+params.osc_count = 10;
 
 %Descretized Debey spectral density - need us to choose a
     %charactaristic frequency for the bath wc
