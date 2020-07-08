@@ -5,7 +5,7 @@ objects = main.o kbd.o command.o display.o \
 objects = main.o params.o
 
 spin_boson : $(objects)
-	g++ -o spin_boson main.o
+	g++ -o spin_boson $(objects)
 
 
 .PHONY : clean
