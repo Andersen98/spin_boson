@@ -2,7 +2,7 @@ clear variables;
 %energy is in units of Delta so we are left with the
 %physics params - (k_b=h_bar=1, energy in units of delta)
 params.epsilon = 0;
-params.lambda = 2.5;
+params.lambda = 2.5;        
 params.T = .2; 
 
 %simulation parameters
