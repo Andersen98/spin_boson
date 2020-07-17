@@ -22,8 +22,8 @@ for ii = 1:bath_count
     end    
     %energy is just w_ii*(n_ii + 1/2)
     energies = number_state + 1/2;
-    energies = prod([energies;bath_elements(1,:)],1);
     
+    energies = prod([energies;bath_elements(1,:)],1);
     %c_ii = sqrt(prob(state_ii))
     c_ii = exp (-.5.*beta.*sum(energies));
      

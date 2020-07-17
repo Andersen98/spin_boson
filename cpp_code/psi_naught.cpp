@@ -1,10 +1,12 @@
 #include  "psi_naught.hpp"
 #include <boost/numeric/ublas/io.hpp>
 #include <cmath>
+#include "utils.hpp"
 namespace ublas = boost::numeric::ublas;
 
 void init_psi(ublas::vector<double> &psi, const Params &p){
   ublas::vector<int> number_state((unsigned)p.osc_count);
+  ublas::vector<int> number_state2((unsigned)p.osc_count);
   double omega_sum = ublas::norm_1(p.osc_freq)*0.5;
   
   for(int i = 0; i < p.num_bath; ++i){
@@ -19,9 +21,9 @@ void init_psi(ublas::vector<double> &psi, const Params &p){
       number_state(j) = 0;
       number_state(j+1) += 1;
     }
-    
-    //std::cout << number_state << std::endl;
-
+    utils::update_number_state(number_state2,i,p);
+    std::cout << "original: "<< number_state << std::endl;
+    std::cout << "new func" << number_state2 << std::endl <<std::endl;
     double energy_i = ublas::inner_prod(p.osc_freq,number_state) + omega_sum;
 
     psi(i) = exp(-energy_i);
