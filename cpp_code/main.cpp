@@ -5,7 +5,7 @@ int main() {
   utils::Params p;
   //param_init_args
   //---params,eps,lamda,T,wc,osc_c,mode_c  
-  utils::params_init(p, 0, 2.5, .2, .25, 28, 2);
+  utils::params_init(p, 0, 2.5, .2, .25, 15, 2);
   std::cout << "wk" << p.osc_freq << std::endl;
   std::cout << "ck" << p.osc_c <<std::endl<<std::endl;
   utils::vector_type  psi(2* (unsigned)p.num_bath);
