@@ -9,7 +9,7 @@ params.T = .2;
     %osc_count is the number of oscillators to be used in the bath
     %n_max is the maximal mode for each oscillator i,e, can range from
     %0,1,2,3...n
-params.osc_count = 4;
+params.osc_count = 3;
 params.mode_count = 2;
 
 %Descretized Debey spectral density - need us to choose a
@@ -35,7 +35,7 @@ initial_state = psi_naught(bath_elements,1/params.T);
 
      
  FULL_H = @(t,y) -1i.*(anc_H(H_s_w,H_b_w,H_sb_w,y,num_bath));
-[t,y] = ode15s(@(t,y) FULL_H(t,y),[0,20],initial_state);
+[t,y] = ode15s(@(t,y) FULL_H(t,y),[0,12],initial_state);
 
 pt = zeros(1,length(t));
 for ii = 1:length(t)

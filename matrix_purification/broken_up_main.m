@@ -44,6 +44,6 @@ for ii = 1:length(t)
 end
 %plot the solution
 plot(t',pt,'-o');
-title('Poulation difference Tr[\rho_s \sigma_z] solved with ODE 45')
+title('Poulation difference Tr[\rho_s \sigma_z] solved with ODE 15s')
 xlabel('Time t');
 ylabel('Population Difference');
