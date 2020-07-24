@@ -3,8 +3,9 @@
 #include <boost/numeric/odeint.hpp>
 
 namespace ublas = boost::numeric::ublas;
-const int count_osc = 17;
-const int count_mode = 3;
+const int count_osc = 12;
+const int count_mode = 4;
+//read https://aip.scitation.org/doi/full/10.1063/1.5126945
 
 void write_population( const utils::vector_type &x , const double t );
 void rhs(const utils::vector_type &x, utils::vector_type &dxdt, const double /* t */);
