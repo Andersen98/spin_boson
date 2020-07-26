@@ -23,6 +23,7 @@ params.lambda = 2.5;
 
 %construct the bath terms (frequency and coupling
 bath_elements = bath_terms(params.w0,params.wf,params.osc_count,params.wc,params.mode_counts,params.lambda);
+initial_state_terms = psi_naught_terms(params.bath_elements,1/params.T);
 
 %get a truncated initial bath state, where the bath is in "thermal
 %equilibrium"

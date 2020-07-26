@@ -9,7 +9,7 @@ params.T = .2;
     %osc_count is the number of oscillators to be used in the bath
     %n_max is the maximal mode for each oscillator i,e, can range from
     %0,1,2,3...n
-params.osc_count = 4;
+params.osc_count = 8;
 params.mode_count = 2;
 
 %Descretized Debey spectral density - need us to choose a
